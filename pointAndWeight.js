@@ -70,7 +70,8 @@ function calculateWeightBasedGrade() {
     }
 
     let finalGrade = (totalWeightedScore / (totalWeight / 100)).toFixed(2);
-    alert("Your final Weight-Based Grade is: " + finalGrade + "%");
+    document.getElementById("weightGradeFinal").innerText = `Your final Point-Based Grade is: ${finalGrade} %`;
+
 }
 
 // Function to Calculate Point-Based Grade
@@ -97,7 +98,10 @@ function calculatePointBasedGrade() {
     }
 
     let finalGrade = ((totalPointsGot / totalMaxPoints) * 100).toFixed(2);
-    alert("Your final Point-Based Grade is: " + finalGrade + "%");
+    
+    
+    document.getElementById("pointGradeFinal").innerText = `Your final Point-Based Grade is: ${finalGrade} %`;
+
 }
 
 // Attach Event Listeners

@@ -1,33 +1,99 @@
-body{
+body {
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-#navBar{
-    height:30px;
+/* Navigation Bar */
+#navBar {
+    height: 50px;
     width: 100%;
-    margin: none;
-    padding: 10px;
     background-color: rgb(176, 87, 87);
     display: flex;
     justify-content: space-between;
-    font-size: 30px;
-
+    align-items: center;
+    padding: 0 20px;
+    font-size: 24px;
+    color: white;
 }
 
-#rightNav{
+#rightNav {
     display: flex;
-    
-
 }
 
-.rNav{
+.rNav {
     margin-right: 20px;
 }
 
+.rNav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
 
-.show{
+.rNav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+#container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Grade Type Selection */
+.calType {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    background-color: rgb(87, 176, 87);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(67, 146, 67);
+}
+
+/* Input Fields */
+input {
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Containers for Grade Sections */
+#weightedContainer, #pointContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weightField, .pointField {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Hide/Show Sections */
+.show {
     display: block;
 }
-.hide{
+
+.hide {
     display: none;
+}
+
+/* Results Display */
+#weightGradeFinal, #pointGradeFinal {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
