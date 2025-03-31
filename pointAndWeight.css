@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+
+#navBar{
+    height:30px;
+    width: 100%;
+    margin: none;
+    padding: 10px;
+    background-color: rgb(176, 87, 87);
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+
+}
+
+#rightNav{
+    display: flex;
+    
+
+}
+
+.rNav{
+    margin-right: 20px;
+}
+
+
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

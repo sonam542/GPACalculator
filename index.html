@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Cclculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navBar">
+        <div id="leftNav">
+           <strong>sonam</strong> 
+        </div>
+
+        <div id="rightNav">
+            <div class="rNav">home</div>
+            <div class="rNav">about</div>
+            <div class="rNav">contact</div>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <div id="leftSide">
+
+            <div id="gpaCal">
+
+                <div id="nameDif">
+                    <p class="top-name"> <strong>Course</strong> </p>
+                    <p class="top-name"> <strong> Credit</strong></p>
+                    <p class="top-name"> <strong> grade</strong></p>
+                </div>
+                <div id="course">
+                    <div class="course_entry">
+                        <input  type="text" class="courses" placeholder="Course name" >
+                        <input type="number" class="credit" placeholder="Credit"  >
+                        <select class="grade" >
+                            <option> A</option>
+                            <option> A-</option>
+                            <option>B+</option>
+                            <option> B</option>
+                            <option> B-</option>
+                            <option>C+</option>
+                            <option> C</option>
+                            <option> C-</option>
+                            <option>D+</option>
+                            <option> D</option>
+                            <option> D-</option>
+                            <option>E</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div >
+                    <input type="button" id="add" value="add" onclick="addCourse()">
+
+                </div>
+                <div id="sumit">
+                    <input type="button" value="sumit" onclick="sumitFinal()">
+
+                </div>
+
+                <div id="answer"></div>
+
+                
+
+
+            </div>
+
+        </div>
+
+
+        <div id="rightSide">
+            <div class="otherCal">
+                <h1>Current Time</h1>
+             <div id="clock">Loading...</div>
+             <br>
+
+             <a  id="diffPage"   href="pointAndWeight.html"> <strong>Grade Calculation</strong> </a>
+
+            
+             </div>
+
+        </div>
+    </div>
+    <hr>
+
+
+
+    
+
+    <script src="script.js"></script>
+
+</body>
+</html>

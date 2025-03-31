@@ -1,0 +1,147 @@
+body{
+    
+    
+    background-color: pink;
+    margin: 0;
+}
+
+#navBar{
+    height:30px;
+    width: 100%;
+    margin: none;
+    padding: 10px;
+    background-color: rgb(176, 87, 87);
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+
+}
+
+#nameDif{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0%;
+}
+
+.top-name{
+    width: 100px;
+    height: 25px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    margin-right: 5px;
+    background-color: pink;
+    font-size: large;
+
+}
+
+#rightNav{
+    display: flex;
+    
+
+}
+
+.rNav{
+    margin-right: 20px;
+}
+
+#container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(179, 211, 53);
+    margin: none ;
+    display: flex;
+}
+
+
+
+#gpaCal{
+    padding-top: 40px;
+    display: flex;
+    align-content: center;
+
+    align-items: center;
+    height: 70%;
+    width: 70%;
+    background-color: azure;
+flex-direction: column;
+
+}
+
+
+
+#leftSide{
+    background-color: lightblue;
+    width: 200%;
+    height: 88vh;
+    display: flex;
+    padding: 0px;
+    padding-top: 100px;
+    justify-content: center
+    ;
+
+
+}
+
+.courses{
+    width: 100px;
+    height: 25px;
+
+}
+
+.credit{
+    width: 100px;
+    height: 25px;
+}
+
+.grade{
+    width: 100px;
+    height: 25px;
+}
+
+
+#rightSide{
+    display: flex;
+    background-color: bisque;
+    width: 100%;
+    height: 88vh;
+    padding-top: 100px;
+    
+    justify-content: center;
+}
+
+.course_entry{
+    margin-bottom: 5px;
+}
+.otherCal{
+    padding-top: 40px;
+    display: flex;
+    align-content: center;
+
+    align-items: center;
+    height: 70%;
+    width: 70%;
+    background-color: azure;
+flex-direction: column;
+}
+
+#clock {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+#diffPage{
+    text-decoration: none;
+    font-size: 15px;
+    
+    
+}
+
+#diffPage:hover{
+    background-color: pink;
+    font-size: 20px;
+    padding: 2px;
+
+}
+

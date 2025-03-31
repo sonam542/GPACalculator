@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point and Weight Calculator</title>
+    <link rel="stylesheet" href="pointAndWeight.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navBar">
+        <div id="leftNav">
+            <strong>Sonam</strong>
+        </div>
+        <div id="rightNav">
+            <div class="rNav"><a href="index.html">Home</a></div>
+            <div class="rNav"><a href="index.html">About</a></div>
+            <div class="rNav"><a href="index.html">Contact</a></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="container">
+        <!-- Grade Type Selection -->
+        <div class="calType">
+            <button id="weight">Weight-Based Grade</button>
+            <button id="point">Point-Based Grade</button>
+        </div>
+
+        <!-- Weight-Based Grade Calculator -->
+        <section id="weightGrade">
+            <h1>Weight-Based Grade</h1>
+
+            <div id="weightedContainer">
+                <div class="weightField">
+                    <input type="text" placeholder="Assignment">
+                    <input type="number" class="gradeGot" placeholder="Grade you got">
+                    <input type="number" class="weight" placeholder="Weight (%)">
+                </div>
+            </div>
+
+            <div>
+                <button id="addWeight">Add More</button>
+            </div>
+
+            <div>
+                <button id="calcWeight">Calculate Weight-Based Grade</button>
+            </div>
+        </section>
+
+        <!-- Point-Based Grade Calculator -->
+        <section id="pointGrade" class="hide">
+            <h1>Point-Based Grade</h1>
+
+            <div id="pointContainer">
+                <div class="pointField">
+                    <input type="text" placeholder="Assignment">
+                    <input type="number" class="pointGot" placeholder="Points you got">
+                    <input type="number" class="maxPoint" placeholder="Max points">
+                </div>
+            </div>
+
+            <div>
+                <button id="addPoint">Add More</button>
+            </div>
+
+            <div>
+                <button id="calcPoint">Calculate Point-Based Grade</button>
+            </div>
+
+            <div id="pointGrade">
+
+            </div>
+        </section>
+    </div>
+
+    <script src="pointAndWeight.js"></script>
+</body>
+</html>
