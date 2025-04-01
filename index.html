@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPA Cclculator</title>
+    <title>GPA Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,84 +13,106 @@
         </div>
 
         <div id="rightNav">
-            <div class="rNav">home</div>
-            <div class="rNav">about</div>
-            <div class="rNav">contact</div>
+            <div class="rNav"> <a href="#leftSide">home</a></div>
+            <div class="rNav"><a href="#rightSecond">about</a></div>
+            <div class="rNav"> <a href="#rightSecond">contact</a></div>
         </div>
     </div>
 
     <div id="container">
 
         <div id="leftSide">
-
-            <div id="gpaCal">
-
-                <div id="nameDif">
-                    <p class="top-name"> <strong>Course</strong> </p>
-                    <p class="top-name"> <strong> Credit</strong></p>
-                    <p class="top-name"> <strong> grade</strong></p>
-                </div>
-                <div id="course">
-                    <div class="course_entry">
-                        <input  type="text" class="courses" placeholder="Course name" >
-                        <input type="number" class="credit" placeholder="Credit"  >
-                        <select class="grade" >
-                            <option> A</option>
-                            <option> A-</option>
-                            <option>B+</option>
-                            <option> B</option>
-                            <option> B-</option>
-                            <option>C+</option>
-                            <option> C</option>
-                            <option> C-</option>
-                            <option>D+</option>
-                            <option> D</option>
-                            <option> D-</option>
-                            <option>E</option>
+            <div class="course-input">
+                <h2><span class="color">Current Courses</span></h2>
+                <div id="courses">
+                    <div class="course">
+                        <input type="text" class="course-name" placeholder="Course Name">
+                        <select class="grade">
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="C-">C-</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
                         </select>
+                        <input type="number" class="credits" step="0.5" placeholder="Credits">
+                        <br>
+                        
+                        
                     </div>
-
                 </div>
-
-                <div >
-                    <input type="button" id="add" value="add" onclick="addCourse()">
-
-                </div>
-                <div id="sumit">
-                    <input type="button" value="sumit" onclick="sumitFinal()">
-
-                </div>
-
-                <div id="answer"></div>
-
-                
-
-
+                <br>
+                <button id="add-course">Add Course</button>
             </div>
 
+            <div class="input-section">
+                <label for="current-gpa"><span class="color">Current GPA (optional)</span>:</label>
+                <input type="number" id="current-gpa" step="0.01" placeholder="Enter current GPA">
+                <label for="total-credits"><span class="color">Total Credits (optional):</span></label>
+                <input type="number" id="total-credits" step="0.5" placeholder="Enter total credits">
+            </div>
+            <button id="calculate-gpa">Calculate GPA</button>
+            <div id="result"></div>
         </div>
-
 
         <div id="rightSide">
             <div class="otherCal">
                 <h1>Current Time</h1>
-             <div id="clock">Loading...</div>
-             <br>
-
-             <a  id="diffPage"   href="pointAndWeight.html"> <strong>Grade Calculation</strong> </a>
-
-            
-             </div>
-
+                <div id="clock">Loading...</div>
+                <br>
+                <a id="diffPage" href="pointAndWeight.html"><strong>Grade Calculation</strong></a>
+            </div>
         </div>
+
     </div>
+
     <hr>
 
+    <div id="secondpage">
+        <!-- Left Section for GPA Planning -->
+        <div id="leftSecond">
+            <h2>GPA Planning</h2>
+            <div id="gpaPlanning">
+                <h3>Plan your GPA</h3>
+                <div class="planInputs">
+                    <label for="desired-gpa">Desired GPA:</label>
+                    <input type="number" id="desired-gpa" step="0.01" placeholder="Enter desired GPA">
+                    <label for="credits-needed">Credits Needed:</label>
+                    <input type="number" id="credits-needed" step="0.5" placeholder="Enter credits needed">
+                </div>
+                <button id="planCalculate">Calculate</button>
+                <button id="planClear">Clear</button>
+            </div>
+        </div>
 
-
-    
+        <!-- Right Section for About & Contact -->
+        <div id="rightSecond">
+            <div id="aboutContact">
+                <h2>About</h2>
+                <p>Welcome to the GPA calculator page. This tool helps you calculate and plan your GPA based on your courses, grades, and credits. There are links under the Current Time for  other recources.</p>
+                <form action="mailto:muktan.sonam542@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                
+                    <button type="submit">Send Message</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>

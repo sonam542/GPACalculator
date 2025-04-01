@@ -1,147 +1,325 @@
-body{
-    
-    
+body {
     background-color: pink;
     margin: 0;
 }
 
-#navBar{
-    height:30px;
+#navBar {
+    height: 30px;
     width: 100%;
-    margin: none;
     padding: 10px;
     background-color: rgb(176, 87, 87);
     display: flex;
     justify-content: space-between;
     font-size: 30px;
-
 }
 
-#nameDif{
+#rightNav {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 0%;
 }
 
-.top-name{
-    width: 100px;
-    height: 25px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    margin-right: 5px;
-    background-color: pink;
-    font-size: large;
-
-}
-
-#rightNav{
-    display: flex;
-    
-
-}
-
-.rNav{
+.rNav {
     margin-right: 20px;
 }
 
-#container{
+#container {
+    display: flex;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 30px); /* Subtract the navbar height */
     background-color: rgb(179, 211, 53);
-    margin: none ;
-    display: flex;
 }
 
-
-
-#gpaCal{
-    padding-top: 40px;
-    display: flex;
-    align-content: center;
-
-    align-items: center;
-    height: 70%;
-    width: 70%;
-    background-color: azure;
-flex-direction: column;
-
-}
-
-
-
-#leftSide{
+#leftSide {
     background-color: lightblue;
-    width: 200%;
-    height: 88vh;
-    display: flex;
-    padding: 0px;
-    padding-top: 100px;
-    justify-content: center
-    ;
-
-
+    width: 60%; /* Takes up 60% of the screen */
+    padding: 30px; /* Increased padding for better spacing */
+    box-sizing: border-box;
+    border-right: 2px solid #ccc; /* Add a subtle border to separate the sections */
 }
 
-.courses{
-    width: 100px;
-    height: 25px;
-
-}
-
-.credit{
-    width: 100px;
-    height: 25px;
-}
-
-.grade{
-    width: 100px;
-    height: 25px;
-}
-
-
-#rightSide{
-    display: flex;
+#rightSide {
     background-color: bisque;
-    width: 100%;
-    height: 88vh;
-    padding-top: 100px;
-    
-    justify-content: center;
+    width: 40%; /* Takes up 40% of the screen */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.course_entry{
-    margin-bottom: 5px;
-}
-.otherCal{
-    padding-top: 40px;
-    display: flex;
-    align-content: center;
-
-    align-items: center;
-    height: 70%;
-    width: 70%;
-    background-color: azure;
-flex-direction: column;
+#leftSide .course-input {
+    margin-bottom: 20px;
 }
 
-#clock {
+#leftSide h2 {
+    font-size: 28px; /* Larger font size for section heading */
+    color: rgb(176, 87, 87); /* Matching navbar color */
+    text-align: center;
+    margin-bottom: 20px; /* Add space between the heading and form */
+}
+
+#leftSide .input-section {
+    display: flex; /* Make input and button elements inline */
+    align-items: center; /* Align items vertically centered */
+    margin-bottom: 20px;
+}
+
+#leftSide .input-section label {
+    font-weight: bold;
+    margin-right: 10px; /* Add space between the label and input */
+}
+
+#leftSide .input-section input {
+    width: 70%; /* Adjust input width */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-right: 10px; /* Add space between input and button */
+}
+
+#leftSide .input-section button {
+    background-color: rgb(176, 87, 87);
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#leftSide .input-section button:hover {
+    background-color: darkred;
+}
+
+
+/* Additional styling for the inputs and the button in the left-side */
+#leftSide .input-section input:focus {
+    outline: none;
+    border-color: #ff6347; /* A highlighted border when focused */
+}
+
+#leftSide button:focus {
+    outline: none;
+    border-color: darkred; /* Highlight button border on focus */
+}
+
+#rightSide .otherCal {
+    text-align: center;
+}
+
+#rightSide #clock {
     font-size: 2em;
     font-weight: bold;
     color: #333;
 }
 
-
-#diffPage{
-    text-decoration: none;
-    font-size: 15px;
-    
-    
+#secondpage {
+    display: flex;
+    width: 100%;
+    background-color: rgb(245, 180, 220);
 }
 
-#diffPage:hover{
+/* Left section for GPA Planning */
+#leftSecond {
+    width: 60%;
+    background-color: lightblue;
+    padding: 20px;
+}
+
+/* Right section for About & Contact */
+#rightSecond {
+    width: 40%;
+    background-color: bisque;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Styling for GPA Planning */
+#gpaPlanning {
+    padding: 20px;
+    background-color: azure;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#gpaPlanning h2 {
+    text-align: center;
+}
+
+.planInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.planInputs label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.planInputs input {
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+/* Buttons for GPA Planning */
+#planCalculate, #planClear {
+    background-color: rgb(176, 87, 87);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#planCalculate:hover, #planClear:hover {
+    background-color: darkred;
+}
+
+/* Styling for About & Contact section */
+#aboutContact {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#aboutContact h2 {
+    color: rgb(176, 87, 87);
+}
+
+#aboutContact p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#diffPage {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#diffPage:hover {
     background-color: pink;
     font-size: 20px;
     padding: 2px;
-
 }
 
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: rgb(176, 87, 87);
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: darkred;
+}
+
+
+/* Mobile responsiveness for 480px width */
+@media screen and (max-width: 480px) {
+    #navBar {
+        flex-direction: column;
+        padding: 5px;
+        font-size: 18px; /* Adjusted font size for mobile */
+    }
+    
+    #container {
+        flex-direction: column;
+        height: auto; /* Allow content to be taller on smaller screens */
+    }
+
+    #leftSide {
+        width: 100%;
+        padding: 15px;
+        border-right: none;
+        border-bottom: 2px solid #ccc; /* Add a border between sections */
+    }
+
+    #rightSide {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #leftSide .input-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #leftSide .input-section input, #leftSide .input-section button {
+        width: 100%; /* Ensure elements span the full width on smaller screens */
+        margin-bottom: 10px;
+    }
+
+    #leftSide h2 {
+        font-size: 20px; /* Adjusted font size */
+    }
+
+    #secondpage {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #leftSecond, #rightSecond {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #gpaPlanning {
+        padding: 15px;
+    }
+
+    #aboutContact {
+        padding: 15px;
+    }
+
+    /* Small adjustments for iPhone and devices with width 480px */
+    #leftSide .input-section input {
+        padding: 10px;
+        font-size: 14px; /* Adjust input font size */
+    }
+
+    #leftSide .input-section button {
+        font-size: 16px; /* Adjust button font size */
+    }
+
+    #rightSide #clock {
+        font-size: 1.5em; /* Reduce clock size on smaller devices */
+    }
+
+    #rightSide .otherCal {
+        font-size: 16px; /* Adjust text size */
+    }
+}
