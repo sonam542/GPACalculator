@@ -1,4 +1,4 @@
-// GPA Calculation for Current Courses
+// Add Course Input Fields
 document.getElementById("add-course").addEventListener("click", function() {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
@@ -31,6 +31,7 @@ document.getElementById("add-course").addEventListener("click", function() {
     });
 });
 
+// GPA Calculation for Current Courses
 document.getElementById("calculate-gpa").addEventListener("click", function() {
     const courses = document.querySelectorAll(".course");
     let totalPoints = 0;
@@ -80,28 +81,41 @@ document.getElementById("calculate-gpa").addEventListener("click", function() {
 });
 
 // GPA Planning (Calculate Required GPA)
+// GPA Planning (Calculate Required GPA)
 function calculatePlanningGPA() {
+    // Get values from input fields
     const currentGPA = parseFloat(document.getElementById("currentGPA").value);
     const targetGPA = parseFloat(document.getElementById("targetGPA").value);
     const currentCredits = parseFloat(document.getElementById("currentCredits").value);
     const additionalCredits = parseFloat(document.getElementById("additionalCredits").value);
     
-    if (!isNaN(currentGPA) && !isNaN(targetGPA) && !isNaN(currentCredits) && !isNaN(additionalCredits)) {
-        const totalCredits = currentCredits + additionalCredits;
-        const totalPointsRequired = targetGPA * totalCredits;
-        const currentPoints = currentGPA * currentCredits;
-        const requiredPoints = totalPointsRequired - currentPoints;
+    // Check if all inputs are valid numbers
+    if (isNaN(currentGPA) || isNaN(targetGPA) || isNaN(currentCredits) || isNaN(additionalCredits)) {
+        document.getElementById("planResult").textContent = "Please enter valid values for current GPA, target GPA, credits, and additional credits.";
+        return;
+    }
+    
+    // Calculate the total credits and required points
+    const totalCredits = currentCredits + additionalCredits;
+    const totalPointsRequired = targetGPA * totalCredits;
+    const currentPoints = currentGPA * currentCredits;
+    const requiredPoints = totalPointsRequired - currentPoints;
+
+    // If required points is positive, calculate the required GPA for additional credits
+    if (requiredPoints > 0) {
+        const requiredGrade = requiredPoints / additionalCredits;
         
-        if (requiredPoints > 0) {
-            const requiredGrade = requiredPoints / additionalCredits;
-            document.getElementById("planResult").textContent = `You need a GPA of at least ${requiredGrade.toFixed(2)} in your additional courses.`;
+        // If the required GPA is above 4.0, it is impossible to achieve
+        if (requiredGrade > 4.0) {
+            document.getElementById("gpaResult").textContent = "It's not possible to reach your target GPA. You need more than a 4.0 GPA in your additional courses.";
         } else {
-            document.getElementById("planResult").textContent = "Your current GPA is already enough to reach your target GPA!";
+            document.getElementById("gpaResult").textContent = `You need a GPA of at least ${requiredGrade.toFixed(2)} in your additional courses.`;
         }
     } else {
-        document.getElementById("planResult").textContent = "Please enter valid values for current GPA, target GPA, credits, and additional credits.";
+        document.getElementById("gpaResult").textContent = "Your current GPA is already enough to reach your target GPA!";
     }
 }
+
 
 // Function to update the clock
 function updateClock() {
@@ -123,9 +137,7 @@ setInterval(updateClock, 1000);
 // Call the function once to display the clock immediately when the page loads
 updateClock();
 
-
-
-
+// GPA Planning Event Handlers
 document.getElementById("planCalculate").addEventListener("click", calculatePlanningGPA);
 document.getElementById("planClear").addEventListener("click", function() {
     document.getElementById("currentGPA").value = "";

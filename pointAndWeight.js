@@ -24,12 +24,15 @@ function createPoint() {
         <input type="text" placeholder="Assignment">
         <input type="number" class="pointGot" placeholder="Points you got">
         <input type="number" class="maxPoint" placeholder="Max points">
+        <button class="removeBtn">Remove</button> <!-- Remove button -->
     `;
 
+    // Now, we can safely attach the event listener to the remove button after it's added to the DOM
+    tempDiv.querySelector(".removeBtn").addEventListener("click", () => {
+        tempDiv.remove(); // Removes the div
+    });
 
     document.getElementById("pointContainer").appendChild(tempDiv);
-
-    
 }
 
 // Function to Add New Weight-Based Grade Input Fields
@@ -41,7 +44,13 @@ function createWeight() {
         <input type="text" placeholder="Assignment">
         <input type="number" class="gradeGot" placeholder="Grade you got">
         <input type="number" class="weight" placeholder="Weight (%)">
+        <button class="removeBtn">Remove</button> <!-- Remove button -->
     `;
+
+    // Now, we can safely attach the event listener to the remove button after it's added to the DOM
+    tempDiv.querySelector(".removeBtn").addEventListener("click", () => {
+        tempDiv.remove(); // Removes the div
+    });
 
     document.getElementById("weightedContainer").appendChild(tempDiv);
 }
