@@ -172,6 +172,7 @@ input {
         flex-wrap: wrap;
         justify-content: center;
         gap: 5px;
+        
     }
 
     input {
@@ -185,6 +186,7 @@ input {
     #weightGradeFinal, #pointGradeFinal {
         font-size: 16px;
     }
+    
 
     .delete-btn {
         background-color: #e74c3c !important;
@@ -206,7 +208,28 @@ input {
         background-color: #c0392b;
     }
 
-    /* Add to existing CSS */
+    .weightField, .pointField {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr auto;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .weightField input, .pointField input {
+        width: 80%;
+        min-width: 0; /* Allows grid to control width */
+        font-size: 14px;
+        padding: 8px 5px;
+    }
+
+    .removeBtn {
+        padding: 8px 10px;
+        font-size: 12px;
+
+    
+
+}
+
 .history-actions {
     display: flex;
     gap: 5px;
