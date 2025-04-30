@@ -3,67 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Point and Weight Calculator</title>
+    <title>Grade Calculator</title>
     <link rel="stylesheet" href="pointAndWeight.css">
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav id="navBar">
         <div id="leftNav">
-            <strong>Sonam</strong>
+            <strong>Grade Calculator</strong>
         </div>
         <div id="rightNav">
-            <div class="rNav"><a href="index.html">Home</a></div>
-            <div class="rNav"><a href="index.html">About</a></div>
-            <div class="rNav"><a href="index.html">Contact</a></div>
+            <div class="rNav"><a href="#" id="homeLink">Home</a></div>
+            <div class="rNav"><a href="#" id="historyLink">History</a></div>
+            <div class="rNav"><a href="#" id="classesLink">Classes</a></div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div id="container">
-        <!-- Grade Type Selection -->
-        <div class="calType">
-            <button id="weight">Weight-Based Grade</button>
-            <button id="point">Point-Based Grade</button>
+        <!-- Class Selection -->
+        <div id="classSelection" class="show">
+            <h2>Select a Class</h2>
+            <div id="classList"></div>
+            <button id="newClassBtn">Create New Class</button>
+            <div id="newClassForm" class="hide">
+                <input type="text" id="classNameInput" placeholder="Class Name">
+                <button id="saveClassBtn">Save</button>
+                <button id="cancelClassBtn">Cancel</button>
+            </div>
         </div>
 
-        <!-- Weight-Based Grade Calculator -->
-        <section id="weightGrade">
-            <h1>Weight-Based Grade</h1>
+        <!-- Calculator View -->
+        <div id="calculatorView" class="hide">
 
-            <div id="weightedContainer">
-                <!-- Input rows will be injected here via JavaScript -->
+
+            <h2 id="currentClassHeading"></h2>
+            <div id="calculatorView" class="hide">
+                <h2 id="currentClassHeading"></h2>
+                <div>
+                    <button id="backToClasses">Back to Classes</button>
+                    <button id="deleteClassBtn" class="delete-btn">Delete Class</button>
+                </div>
+                <!-- ... rest of your calculator view ... -->
+            </div>
+            <button id="backToClasses">Back to Classes</button>
+            
+            <!-- Grade Type Selection -->
+            <div class="calType">
+                <button id="weight">Weight-Based Grade</button>
+                <button id="point">Point-Based Grade</button>
             </div>
 
+            <!-- Weight-Based Grade Calculator -->
+            <section id="weightGrade">
+                <h3>Weight-Based Grade</h3>
+                <div id="weightedContainer"></div>
+                <div>
+                    <button id="addWeight">Add Assignment</button>
+                    <button id="calcWeight">Calculate</button>
+                    <button id="saveWeightCalc">Save Calculation</button>
+                </div>
+                <div id="weightGradeFinal"></div>
+            </section>
+
+            <!-- Point-Based Grade Calculator -->
+            <section id="pointGrade" class="hide">
+                <h3>Point-Based Grade</h3>
+                <div id="pointContainer"></div>
+                <div>
+                    <button id="addPoint">Add Assignment</button>
+                    <button id="calcPoint">Calculate</button>
+                    <button id="savePointCalc">Save Calculation</button>
+                </div>
+                <div id="pointGradeFinal"></div>
+            </section>
+        </div>
+
+        <!-- History View -->
+        <div id="historyView" class="hide">
+            <h2>Calculation History</h2>
             <div>
-                <button id="addWeight">Add More</button>
+                <button id="backFromHistory">Back</button>
+                <button id="clearAllHistory" class="delete-btn">Clear All History</button>
             </div>
-
-            <div>
-                <button id="calcWeight">Calculate Weight-Based Grade</button>
-            </div>
-            <div id="weightGradeFinal"></div>
-        </section>
-
-        <!-- Point-Based Grade Calculator -->
-        <section id="pointGrade" class="hide">
-            <h1>Point-Based Grade</h1>
-
-            <div id="pointContainer">
-                <!-- Input rows will be injected here via JavaScript -->
-            </div>
-
-            <div>
-                <button id="addPoint">Add More</button>
-            </div>
-
-            <div>
-                <button id="calcPoint">Calculate Point-Based Grade</button>
-            </div>
-
-            <div id="pointGradeFinal"></div>
-        </section>
+            <div id="historyList"></div>
+        </div>
     </div>
 
     <script src="pointAndWeight.js"></script>
